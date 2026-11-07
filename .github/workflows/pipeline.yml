@@ -85,6 +85,10 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
+    # Espera a aprovacao de um revisor do ambiente production
+    environment:
+      name: production
+      url: http://57.156.66.21:8081
 
     steps:
       - name: Deploy via SSH
